@@ -1,0 +1,37 @@
+
+*
+* @brief : Analog Lorenz Attractor
+* @author : nimisbert
+* @source : P.Horowitz
+*
+.include ./LT1057.sub
+.include ./AD633.sub
+
+VCC P 0 DC= 16
+VEE N 0 DC=-16
+
+R1 Y 1 100k
+R2 X 1 100k
+C1 1 X 0.1u
+X1 0 1 P N X LT1057
+
+R3 X 2 36.7k
+R4 XZ 2 10k
+R5 Y 2 1Meg
+C2 2 Y 0.1u
+X2 0 2 P N Y LT1057
+
+R6 XY 3 10k
+R7 Z 3 374k
+C3 3 Z 0.1u
+X3 0 3 P N Z LT1057
+
+X4 X 0 Y 0 N 0 XY P AD633
+X5 X 0 0 Z N 0 XZ P AD633 
+
+.control
+ic V(X)=0 V(Y)=0 V(Z)=0
+tran 1 5 0 0.001 uic
+plot X Y Z
+.endc
+.end
