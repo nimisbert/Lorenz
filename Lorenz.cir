@@ -33,5 +33,6 @@ X5 X 0 0 Z N 0 XZ P AD633
 ic V(X)=0 V(Y)=0 V(Z)=0
 tran 1 5 0 0.001 uic
 plot X Y Z
+wrdata butterfly.dat X Y Z 
 .endc
 .end
