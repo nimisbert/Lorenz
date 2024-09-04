@@ -7,9 +7,11 @@ reset
 set termopt enhanced
 set terminal gif animate delay 3 loop 0 optimize 
 set output "butterfly.gif"
-set xlabel "v_x(t)"
-set ylabel "v_y(t)"
-set zlabel "v_z(t)"
+set xlabel "v_x(t) [V]"
+set ylabel "v_y(t) [V]"
+set zlabel "v_z(t) [V]"
+set key noautotitle
+set grid
 
 n = 360
 do for [i=1:n] {
