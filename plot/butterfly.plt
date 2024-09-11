@@ -16,7 +16,7 @@ set xyplane 0
 n = 360
 do for [i=1:n] {
     set view 60, i*360/n
-    splot "../data/butterfly.dat" u 2:4:($6 * 0 -2) with lines linecolor rgb "cyan", \
+    splot "../data/butterfly.dat" u 2:4:($6 * 0 -2) with lines linecolor rgb "light-green", \
           "" u 2:4:6 with lines linecolor rgb "black"
           
 }
